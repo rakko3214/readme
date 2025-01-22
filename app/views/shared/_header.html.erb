@@ -1,0 +1,17 @@
+<header class="bg-sky-400">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-3" aria-label="Global">
+    <div class="flex py-3">
+      <bottom class="bg-slate-700 text-white font-bold py-2 px-4 rounded">
+        <%= link_to 'TOP', root_path, class: "text-4xl nav-link hover:text-blue-500" %>
+      </bottom>
+    </div>
+    <div class="flex py-3 text-white">
+    検索
+    </div>
+    <div class="flex py-3">
+      <bottom class="bg-slate-700 text-white font-bold py-2 px-4 rounded">
+        <%= link_to "マイページ", "/users/#{current_user.id}", class: "text-4xl nav-link hover:text-blue-400" %>
+        <%= link_to 'ログアウト', logout_path, class: 'dropdown-item text-red-600 hover:text-red-800' , data: { turbo_method: :delete } %>
+      </bottom>
+    </div>
+</header>
