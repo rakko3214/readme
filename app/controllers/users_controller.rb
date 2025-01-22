@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @name = current_user.name
   end
