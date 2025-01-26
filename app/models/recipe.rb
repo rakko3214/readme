@@ -4,4 +4,5 @@ class Recipe < ApplicationRecord
   validates :cooking_time, presence: true
 
   belongs_to :user
+  mount_uploader :avatar, AvatarUploader
 end
