@@ -1,1 +1,37 @@
-a
+<div class="container pt-3">
+  <div class="flex justify-self-center mt-4">
+      <% if @recipes.present? %>
+        <% @recipes.each do |recipe| %>
+          <div class="w-full sm:w-1/2 lg:w-1/3 mb-3 ml-5">
+            <div id="recipe-id-<%= recipe.id %>">
+              <div class="bg-white rounded shadow">
+                <%= image_tag recipe.avatar_url, class: "w-72 h-48 object-cover", alt: "Avatar" %>
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h4 class="text-lg font-bold">
+                      <%= link_to recipe.title, "#" %>
+                    </h4>
+                    <div class="flex space-x-2">
+                      <%= link_to "#", id: "button-edit-#{recipe.id}" do %>
+                        <i class="bi bi-pencil-fill"></i>
+                      <% end %>
+                      <%= link_to "#", id: "button-delete-#{recipe.id}", method: :delete, data: {confirm: ""} do %>
+                        <i class="bi bi-trash-fill"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  <ul class="list-none mt-2">
+                    <li class="inline-flex items-center"><i class="bi bi-person"></i><%= recipe.user.name %></li>
+                    <li class="inline-flex items-center"><i class="bi bi-calendar"></i><%= l recipe.created_at, format: :short %></li>
+                  </ul>
+                  <p><%= "調理時間#{recipe.cooking_time}分" %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="mb-3">レシピがありません</div>
+      <% end %>
+  </div>
+</div>

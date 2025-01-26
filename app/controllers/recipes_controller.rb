@@ -16,9 +16,13 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = current_user.recipes.find(params[:id])
+  end
+
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :content, :cooking_time, :ingredient)
+    params.require(:recipe).permit(:title, :content, :cooking_time, :ingredient, :avatar)
   end
 end
