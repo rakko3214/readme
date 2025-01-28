@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="justify-self-center mt-10">
+    <div class="text-4xl text-gray-900">
+      <%= "#{@recipe.title}" %>
+    </div>
+    <div class="bg-white rounded shadow mt-3">
+      <%= image_tag @recipe.avatar_url, class: "w-72 h-48 object-cover", alt: "Avatar" %>
+    </div>
+  </div>
+  <div class="ml-20 mt-10">
+    <p class="text-3xl">材料</p>
+    <p class="border border-gray-900"><%= "#{@recipe.ingredient}"%></p>
+  </div>
+  <div class="ml-20 mt-10">
+    <p class="text-3xl">作業手順</p>
+    <p class="border border-gray-900"><%= "#{@recipe.content}" %></p>
+  </div>
+  <% if current_user && current_user.own?(@recipe) %>
+    <div class='flex ml-20 mt-5 text-blue-700'> 
+      <%= link_to "編集", edit_recipe_path(@recipe) %>
+    </div>
+    <div class='flex ml-20 mt-5 text-blue-700'> 
+      <%= button_to '削除', recipe_path(@recipe), method: :delete %>
+    </div>
+  <% end %>
+</div>
