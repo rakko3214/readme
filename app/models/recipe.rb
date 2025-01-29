@@ -4,5 +4,6 @@ class Recipe < ApplicationRecord
   validates :cooking_time, presence: true
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 end

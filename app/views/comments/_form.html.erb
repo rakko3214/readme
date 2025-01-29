@@ -1,0 +1,9 @@
+<div class="mb-3" id="comment-form">
+  <div class="max-w-lg mx-auto">
+  <%= form_with model: comment, url: recipe_comments_path(@recipe) do |f| %>
+    <%= f.label "コメント", class: "block text-sm font-medium text-gray-700" %>
+    <%= f.text_area :body, class: "form-control mb-3 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500", rows: 4 %>
+    <%= f.submit "投稿", class: "btn btn-primary bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" %>
+  <% end %>
+  </div>
+</div>
