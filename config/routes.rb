@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   delete "logout", to: "user_sessions#destroy"
   resources :recipes, only: %i[index new create edit destroy show update] do
     resources :comments, only: %i[create destroy], shallow: true
+    collection do
+      get :favorites
+    end
   end
+  resources :favorites, only: %i[create destroy]
 end
