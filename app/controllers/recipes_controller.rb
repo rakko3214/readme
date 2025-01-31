@@ -34,12 +34,17 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to recipes_path, notice: "レシピが削除されました"
+    redirect_to recipes_path
   end
 
   def edit
     @recipe = current_user.recipes.find(params[:id])
   end
+
+  def favorites
+    @favorite_recipes = current_user.favorite_recipes.includes(:user).order(created_at: :desc)
+  end
+
 
   private
 

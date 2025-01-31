@@ -1,7 +1,7 @@
 ### 画面遷移図
 Figma：https://www.figma.com/design/Cb2YMC4gIiddqnzXlOdAxc/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=y8dJRgt0Lcm6rqqR-0
 
-Figma：https://www.figma.com/board/0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=ucrj69nXMroh9G3f-0
+Figma：https://www.figma.com//0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=ucrj69nXMroh9G3f-0
 
 ### READMEに記載した機能
 - [レ]トップページ
