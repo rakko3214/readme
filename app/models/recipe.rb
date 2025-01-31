@@ -15,6 +15,4 @@ class Recipe < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["comments", "favorites", "user"]
   end
-
-
 end
