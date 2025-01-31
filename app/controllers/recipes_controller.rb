@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.includes(:user)
+    #@recipes = Recipe.includes(:user)
+    @q = Recipe.ransack(params[:q])
+    @recipes = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+
   end
 
   def new
