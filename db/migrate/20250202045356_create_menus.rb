@@ -7,6 +7,6 @@ class CreateMenus < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
-    add_index :menus, [:user_id, :recipe_id], unique: true
+    add_index :menus, [ :user_id, :recipe_id ], unique: true
   end
 end

@@ -13,7 +13,7 @@ class MenusController < ApplicationController
     @menu = current_user.menus.build(menu_params)
 
     if @menu.save
-      redirect_to menus_path, notice: 'メニューが登録されました'
+      redirect_to menus_path, notice: "メニューが登録されました"
     else
       render :new
     end
