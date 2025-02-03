@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :menus, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
   def self.ransackable_attributes(auth_object = nil)

@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_recipes, through: :favorites, source: :recipe
+  has_many :menus, dependent: :destroy
+  has_many :menu_recipes, through: :menus, source: :recipe
 
   def own?(object)
     id == object&.user_id
@@ -26,5 +28,9 @@ class User < ApplicationRecord
 
   def favorite?(recipe)
     favorite_recipes.include?(recipe)
+  end
+
+  def menu(recipe)
+    menu_recipes << recipe
   end
 end
