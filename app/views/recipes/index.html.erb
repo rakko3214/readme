@@ -17,13 +17,13 @@
                 </div>
                 <p><%= "調理時間#{recipe.cooking_time}分" %></p>
                 <div class='ms-auto'>
-                  <% if current_user.favorite?(@recipe) %>
+                  <% if current_user.favorite?(recipe) %>
                     <bottom class="bg-blue-500 text-black font-bold py-2 px-4 rounded">
-                      <%= link_to "お気に入り", favorite_path(current_user.favorites.find_by(recipe_id: recipe.id)), id: "unfavorite-button-for-recipe-#{recipe.id}", data: { turbo_method: :delete } %>
+                      <%= link_to "お気に入り", favorite_path(current_user.favorites.find_by(recipe_id: recipe.id)), data: { turbo_method: :delete } %>
                     </bottom>
                   <% else %>
                     <bottom class="bg-white text-black font-bold py-2 px-4 rounded border border-gray-900">
-                      <%= link_to "お気に入り", favorites_path(recipe_id: recipe.id), id: "favorite-button-for-recipe-#{recipe.id}", data: { turbo_method: :post } %>
+                      <%= link_to "お気に入り", favorites_path(recipe_id: recipe.id), data: { turbo_method: :post } %>
                     </bottom>
                   <% end %>
                 </div>
