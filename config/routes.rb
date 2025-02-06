@@ -24,5 +24,5 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
   resources :favorites, only: %i[create destroy]
-  resources :menus
+  resources :menus, only: %i[index new create edit destroy update show]
 end

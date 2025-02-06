@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :menu_recipes, through: :menus, source: :recipe
 
   def own?(object)
+    object = object.first if object.is_a?(ActiveRecord::Relation)
     id == object&.user_id
   end
 
@@ -30,7 +31,4 @@ class User < ApplicationRecord
     favorite_recipes.include?(recipe)
   end
 
-  def menu(recipe)
-    menu_recipes << recipe
-  end
 end
