@@ -4,7 +4,7 @@
     <h3 ><%= comment.user.name %></h3>
     <p><%= simple_format(comment.body) %></p>
   </tr>
-  <% if current_user.own?(comment) %>
+  <% if current_user && current_user.own?(comment) %>
     <td class="action">
       <ul class="flex justifi-center space-x-2">
         <li class="list-inline-item justify-end text-red-500">
