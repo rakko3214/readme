@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="mb-3" id="comment-form">
   <div class="max-w-lg mx-auto">
   <%= form_with model: comment, url: recipe_comments_path(@recipe) do |f| %>
@@ -8,3 +9,4 @@
   <% end %>
   </div>
 </div>
+<% end %>
