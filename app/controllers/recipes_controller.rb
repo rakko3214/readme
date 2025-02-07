@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  skip_before_action :require_login, only: %i[index]
+
   def index
     @q = Recipe.ransack(params[:q])
     @recipes = @q.result(distinct: true).includes(:user).order(created_at: :desc)
