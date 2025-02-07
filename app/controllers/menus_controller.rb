@@ -13,12 +13,13 @@ class MenusController < ApplicationController
     @menu = current_user.menus.build(menu_params)
     if @menu.save
       recipe_ids_array = []
-      params[:menu][:recipe_ids].reject(&:blank?).each do |recipe_id|
-        recipe_ids_array << recipe_id
+      recipe_ids = params[:menu][:recipe_ids] || []
+      recipe_ids.reject(&:blank?).each do |recipe_id|
+       recipe_ids_array << recipe_id
       end
       @menu.recipe_ids = recipe_ids_array
 
-      redirect_to menus_path, notice: "メニューが登録されました"
+      redirect_to menus_path
     else
       render :new
     end

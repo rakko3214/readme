@@ -30,5 +30,4 @@ class User < ApplicationRecord
   def favorite?(recipe)
     favorite_recipes.include?(recipe)
   end
-
 end

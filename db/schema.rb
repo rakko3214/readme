@@ -40,7 +40,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_04_085515) do
     t.bigint "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "menu_id"
     t.index ["recipe_id"], name: "index_menus_on_recipe_id"
     t.index ["user_id", "recipe_id"], name: "index_menus_on_user_id_and_recipe_id", unique: true
     t.index ["user_id"], name: "index_menus_on_user_id"
