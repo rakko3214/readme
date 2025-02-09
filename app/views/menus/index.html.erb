@@ -1,4 +1,4 @@
-<div class="flex mt-4">
+<div class="mt-4">
   <% if @menus.present? %>
     <% @menus.each do |menu| %>
       <div class="text-lg font-bold">
@@ -17,3 +17,6 @@
   <% else %>
     <div class="mb-3">献立がありません</div>
   <% end %>
+<div class="text-black bg-purple-500 py-10 px-20 mt-40 justify-self-center">
+  <%= link_to "献立作成", new_menu_path %>
+</div>
