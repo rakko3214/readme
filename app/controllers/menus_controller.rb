@@ -23,7 +23,7 @@ class MenusController < ApplicationController
 
       redirect_to menus_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

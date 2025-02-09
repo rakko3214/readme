@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        email: メールアドレス
+        name: ニックネーム
+        password: パスワード
+        password_confirmation: パスワード確認
+      recipe:
+        title: レシピ名
+        content: 手順
+        cooking_time: 調理時間
+      menu:
+        title: 献立名

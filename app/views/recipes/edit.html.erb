@@ -1,35 +1,36 @@
 <div class="container">
-<div class="bg-blue-300 mt-10 justify-self-center py-5 px-20 text-5xl rounded">
-  レシピ
-</div>
+  <div class="bg-blue-300 mt-10 justify-self-center py-5 px-20 text-5xl rounded">
+    レシピ
+  </div>
 </div>
 <div class="container">
-<div class="justify-self-center mt-20">
-  <%= form_with(model: @recipe, local: true, html: { multipart: true }) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="mb-3">
-      <%= f.label "レシピ名" %>
-      <%= f.text_field :title, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
-    </div>
-    <div class="mb-3">
-      <%= f.label "料理画像" %>
-      <%= f.file_field :avatar, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", accept: "image/*" %>
-      <%= f.hidden_field :avatar_cache %>
-    </div>
-    <div class="mb-3">
-      <%= f.label "材料" %>
-      <%= f.text_area :ingredient, class: "g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", row: "10" %>
-    </div>
-    <div class="mb-3">
-      <%= f.label "調理時間" %>
-      <%= f.text_field :cooking_time, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
-      <span class="text-gray-900">分</span>
-    </div>
-    <div class="mb-3">
-      <%= f.label "手順" %>
-      <%= f.text_area :content, class: "g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", row: "10" %>
-    </div>
-    <%= f.submit "登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
-  <% end %>
-</div>
+  <div class="justify-self-center mt-20">
+    <%= form_with(model: @recipe, local: true, html: { multipart: true }) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="mb-3">
+       <%= render 'shared/error_messages', object: f.object %>
+        <%= f.label "レシピ名" %>
+        <%= f.text_field :title, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label "料理画像" %>
+        <%= f.file_field :avatar, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", accept: "image/*" %>
+        <%= f.hidden_field :avatar_cache %>
+      </div>
+      <div class="mb-3">
+        <%= f.label "材料" %>
+        <%= f.text_area :ingredient, class: "g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", row: "10" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label "調理時間" %>
+        <%= f.text_field :cooking_time, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+        <span class="text-gray-900">分</span>
+      </div>
+      <div class="mb-3">
+        <%= f.label "手順" %>
+        <%= f.text_area :content, class: "g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", row: "10" %>
+      </div>
+      <%= f.submit "登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    <% end %>
+  </div>
 </div>

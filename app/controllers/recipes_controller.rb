@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
