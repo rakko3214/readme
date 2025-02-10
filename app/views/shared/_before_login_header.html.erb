@@ -5,10 +5,10 @@
         <%= link_to 'TOP', root_path, class: "text-4xl nav-link hover:text-blue-500" %>
       </bottom>
     </div>
-    <div class="flex py-3 text-white">
+    <div class="flex py-3 text-black">
     <%= search_form_for @q, url: recipes_path do |f| %>
       <div class="flex items-center mb-3">
-        <%= f.search_field :title_or_ingredient_cont, class: "form-input rounded-md border-gray-300 shadow-sm" %>
+        <%= f.search_field :title_or_ingredient_cont, class: "form-input rounded-md border-gray-300 shadow-sm", placeholder: "レシピ名・材料名" %>
         <div class="ml-2">
           <%= f.submit class: "btn btn-primary" %>
         </div>
