@@ -17,7 +17,7 @@ module ApplicationHelper
         },
         twitter: {
           image: image_url("recipe_placeholder.png"),
-          site: "@", 
+          site: "@"
         }
       }
     end
