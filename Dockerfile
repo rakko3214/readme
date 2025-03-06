@@ -8,6 +8,8 @@
 ARG RUBY_VERSION=3.3.6
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
+RUN apt-get update -qq && apt-get install -y postgresql-client
+
 # Rails app lives here
 WORKDIR /rails
 
