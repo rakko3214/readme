@@ -2,7 +2,6 @@
     <div class="col-md-10 col-lg-8 mx-auto mt-8 justify-items-center">
       <h1>ユーザー登録</h1>
       <%= form_with model: @user do |f| %>
-        <%= render "shared/error_messages", object: f.object %>
         <div class="mb-3">
           <%= f.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
           <%= f.text_field :name, class: "border border-gray-300 rounded-md p-2 w-full" %>

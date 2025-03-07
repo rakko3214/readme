@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  skip_before_action :require_login, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @menus = Menu.includes(:user)

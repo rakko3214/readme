@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :authenticate_user!, only: %i[new create]
 
   def new; end
 
@@ -11,10 +11,5 @@ class UserSessionsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    logout
-    redirect_to root_path, status: :see_other
   end
 end
