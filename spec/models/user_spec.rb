@@ -37,13 +37,13 @@ RSpec.describe User, type: :model do
     it "passwordが空では登録できない" do
       @user.password = ""
       @user.valid?
-      expect(@user.errors.full_messages).to include("パスワードは3文字以上で入力してください")
+      expect(@user.errors.full_messages).to include("パスワードを入力してください", "パスワード確認とパスワードの入力が一致しません")
     end
-    it "passwordが3文字以下であれば登録できない" do
+    it "passwordが6文字以下であれば登録できない" do
       @user.password = "00"
       @user.password_confirmation = "00"
       @user.valid?
-      expect(@user.errors.full_messages).to include("パスワードは3文字以上で入力してください")
+      expect(@user.errors.full_messages).to include("パスワードは6文字以上で入力してください")
     end
     it "passwordが存在してもpassword_confirmationが空では登録できない" do
       @user.password_confirmation = ""
@@ -57,7 +57,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
     it "パスワードが暗号化されていること" do
-      expect(@user.crypted_password).to_not eq "password"
+      expect(@user.encrypted_password).to_not eq "password"
     end
   end
 end
