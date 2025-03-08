@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "tops#index"
-  resources :users, only: %i[new create show]
+  resources :users, only: %i[show]
   resources :recipes, only: %i[index new create edit destroy show update] do
     resources :comments, only: %i[create destroy], shallow: true
     collection do
