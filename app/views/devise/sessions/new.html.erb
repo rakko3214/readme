@@ -15,11 +15,13 @@
       <% end %>
       <div class='text-center mt-4'>
         <%= link_to '登録ページへ', new_user_registration_path, class: "text-blue-600 hover:underline" %>
-        <%= link_to 'パスワードをお忘れの方はこちら', '#', class: "text-blue-600 hover:underline" %>
+        <%= link_to 'パスワードをお忘れの方はこちら', new_user_password_path, class: "text-blue-600 hover:underline" %>
       </div>
       <div class="bg-slate-700 text-white font-bold py-2 px-4 rounded">
         <%- if devise_mapping.omniauthable? %>
-          <%= button_to 'Sign in with Google', user_google_oauth2_omniauth_authorize_path %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <%= button_to "googleアカウントでサインイン", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
+          <% end %>
         <% end %>
       </div>
     </div>
