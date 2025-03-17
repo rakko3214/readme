@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
     @q = Recipe.ransack(params[:q])
   end
 
+  def autocomplete
+    @q = Recipe.ransack(params[:q])
+    @examples = @q.result(distinct: true).limit(10)
+  
+    render json: @examples.as_json(only: [:id, :title, :decription])
+  end
+
   private
 
   def configure_permitted_parameters
