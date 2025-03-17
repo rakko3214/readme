@@ -2,8 +2,8 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @q = Recipe.ransack(params[:q])
-    @recipes = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @search = Recipe.ransack(params[:q])
+    @recipes = @search.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def new
