@@ -12,8 +12,7 @@ class ApplicationController < ActionController::Base
   def autocomplete
     @q = Recipe.ransack(params[:q])
     @examples = @q.result(distinct: true).limit(10)
-  
-    render json: @examples.as_json(only: [:id, :title, :decription])
+    render json: @examples.as_json(only: [ :id, :title, :decription ])
   end
 
   private
