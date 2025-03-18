@@ -6,13 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def set_q_for_post
-    @q = Recipe.ransack(params[:q])
-  end
-
-  def autocomplete
-    @q = Recipe.ransack(params[:q])
-    @examples = @q.result(distinct: true).limit(10)
-    render json: @examples.as_json(only: [ :id, :title, :decription ])
+    @search = Recipe.ransack(params[:q])
   end
 
   private

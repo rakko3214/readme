@@ -6,15 +6,11 @@
       </bottom>
     </div>
     <div class="flex py-3 text-black">
-    <%= search_form_for @q, url: recipes_path do |f| %>
-      <div class="flex items-center mb-3" data-controller="autocomplete" data-autocomplete-url-value="<%= autocomplete_recipes_path %>">
-        <%= f.search_field :title_or_ingredient_cont, class: "form-input rounded-md border-gray-300 shadow-sm", placeholder: "レシピ名・材料名", data: { action: "input->autocomplete#search" } %>
-        <ul data-autocomplete-target="results" class="autocomplete-results"></ul>
-        <div class="ml-2">
-          <%= f.submit class: "btn btn-primary" %>
-        </div>
+    <%= search_form_for @search, url: recipes_path, html: {data: {controller: "search",action: "input->search#submit"} } do |f| %>
+      <div class="flex items-center mb-3">
+        <%= f.search_field :title_or_ingredient_cont, class: "form-input rounded-md border-gray-300 shadow-sm", placeholder: "レシピ名・材料名" %>
       </div>
-    <% end %>
+    <% end %>  
     </div>
     <div class="flex py-3">
       <bottom class="bg-slate-700 text-white font-bold py-2 px-4 rounded">

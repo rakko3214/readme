@@ -24,9 +24,6 @@ Rails.application.routes.draw do
       get :favorites
     end
     get :search, on: :collection
-    collection do
-      get :autocomplete
-    end
   end
   resources :favorites, only: %i[create destroy]
   resources :menus, only: %i[index new create edit destroy update show]
