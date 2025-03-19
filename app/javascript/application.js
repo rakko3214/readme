@@ -2,16 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 
-$(document).on('turbolinks:load', function() {
-  $(function(){
-    var loader = $('.loader-wrap');
-
-    $(window).on('load',function(){
-      loader.fadeOut();
-    });
-
-    setTimeout(function(){
-      loader.fadeOut();
-    },2000);
-  });
-});
+window.onload = function () {
+  const spinner = document.getElementById("loading");
+  spinner.classList.add("loaded");
+};
