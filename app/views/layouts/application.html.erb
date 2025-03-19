@@ -13,15 +13,16 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <link rel="stylesheet" href="/assets/loading.css">
+    <%= stylesheet_link_tag 'loading', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body class="flex flex-col min-h-screen">
-    <div class="loader-wrap flex justify-center items-center h-screen">
-      <div class="loader border-4 border-blue-500 border-t-transparent rounded-full w-16 h-16 animate-spin"></div>
+    <div id="loading">
+      <div class="spinner"></div>
     </div>
     <% if user_signed_in? %>
       <%= render 'shared/header' %>
