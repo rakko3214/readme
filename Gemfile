@@ -57,6 +57,12 @@ gem "letter_opener_web"
 
 gem "sassc-rails"
 
+gem "mini_magick"
+
+gem "aws-sdk-s3", require: false
+
+gem "fog-aws"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
