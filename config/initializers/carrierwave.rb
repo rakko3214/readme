@@ -3,7 +3,7 @@ require "carrierwave/storage/file"
 require "carrierwave/storage/fog"
 
 if Rails.env.development?
-  
+    # 開発環境では何もしない
 else
 CarrierWave.configure do |config|
   config.fog_credentials = {
