@@ -2,6 +2,9 @@ require "carrierwave/storage/abstract"
 require "carrierwave/storage/file"
 require "carrierwave/storage/fog"
 
+if Rails.env.development?
+  
+else
 CarrierWave.configure do |config|
   config.fog_credentials = {
     provider:              "AWS",
@@ -10,4 +13,5 @@ CarrierWave.configure do |config|
     region:                ENV["AWS_REGION"]
   }
   config.fog_directory  = ENV["AWS_BUCKET_NAME"]
+end
 end
