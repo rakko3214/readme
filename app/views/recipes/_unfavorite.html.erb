@@ -1,3 +1,3 @@
-<bottom class="bg-blue-500 text-black font-bold py-2 px-4 rounded">
-  <%= link_to "お気に入り", favorite_path(current_user.favorites.find_by(recipe_id: recipe.id)), data: { turbo_method: :delete } %>
-</bottom>
+<%= link_to favorite_path(current_user.favorites.find_by(recipe_id: recipe.id)), id: "unfavorite-button-for-recipe-#{recipe.id}", data: { turbo_method: :delete } do %>
+  <i class="inline-flex h-12 items-center justify-center rounded-md bg-blue-500 px-6 font-medium text-neutral-50 transition active:scale-110">お気に入り</i>
+<% end %>
