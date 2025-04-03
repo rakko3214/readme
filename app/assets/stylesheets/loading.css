@@ -1,9 +1,9 @@
+/* ローディング画面 */
 #loading {
   width: 100vw;
   height: 100vh;
   transition: all 1s;
   background-color: #0bd;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +17,7 @@
   border-radius: 100%;
   animation: sk-scaleout 1s infinite ease-in-out;
 }
+/* ローディングアニメーション */
 @keyframes sk-scaleout {
   0% {
     transform: scale(0);
@@ -27,6 +28,7 @@
   }
 }
 
+/* コンテンツ部分の装飾 */
 .gallery {
   display: grid;
   gap: 0.5rem;
