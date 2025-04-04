@@ -39,7 +39,6 @@ img {
   height: 200px;
   object-fit: cover;
 }
-
 .loaded {
   opacity: 0;
   visibility: hidden;

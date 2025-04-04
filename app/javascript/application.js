@@ -3,7 +3,8 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 
 
-window.onload = function () {
+window.addEventListener('turbo:load', ()=>{
+  console.log("発火");
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
-};
+});

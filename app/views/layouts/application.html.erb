@@ -20,6 +20,9 @@
   </head>
 
   <body class="md:flex flex-col h-screen">
+    <div id="loading">
+      <div class="spinner"></div>
+    </div>
     <% if user_signed_in? %>
       <%= render 'shared/header' %>
     <% else %>
