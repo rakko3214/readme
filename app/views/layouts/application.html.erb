@@ -19,7 +19,7 @@
     <%= display_meta_tags(default_meta_tags) %>
   </head>
 
-  <body class="md:flex flex-col h-screen">
+  <body class="flex flex-col min-h-screen">
     <div id="loading">
       <div class="spinner"></div>
     </div>
@@ -28,9 +28,9 @@
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
-    <div class="md:flex-grow md:flex-col bg-yellow-50 h-screen">
+    <div class="flex-grow md:flex-col bg-yellow-50">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
-  </body>
+</body>
 </html>
