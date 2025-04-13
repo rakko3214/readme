@@ -28,5 +28,7 @@
   </div>
 </div>
 <div class="text-black bg-purple-500 py-10 px-20 mt-40 justify-self-center">
-  <%= link_to "レシピ作成", new_recipe_path %>
+<%= link_to  new_recipe_path do %>
+  <i class="inline-flex md:h-12 md:items-center justify-center rounded-md bg-indigo-800 px-6 text-xs md:text-base font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95">レシピ作成→</i>
+<% end %>
 </div>
