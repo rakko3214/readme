@@ -12,7 +12,6 @@ Figma：https://www.figma.com//0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id
 - [レ]レシピ編集機能
 - [レ]レシピ削除機能
 - [レ]レシピ一覧
-- [レ]コメント機能
 - [レ]検索機能
 - [レ]マイ献立
 - [レ]献立作成機能
