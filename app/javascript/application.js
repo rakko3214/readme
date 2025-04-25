@@ -4,7 +4,12 @@ import "./controllers"
 
 
 window.addEventListener('turbo:load', ()=>{
-  console.log("発火");
+  const spinner = document.getElementById("loading");
+  spinner.classList.add("loaded");
+});
+
+window.addEventListener('turbo:render', ()=>{
+  console.log("aa");
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
 });
