@@ -6,7 +6,6 @@
 <div class="container">
   <div class="justify-self-center mt-20">
     <%= form_with(model: @recipe, local: true, html: { multipart: true }) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
       <div class="mb-3">
        <%= render 'shared/error_messages', object: f.object %>
         <%= f.label "レシピ名" %>

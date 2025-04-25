@@ -4,7 +4,6 @@ class Recipe < ApplicationRecord
   validates :cooking_time, presence: true
 
   belongs_to :user
-  has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :menus, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
@@ -14,6 +13,6 @@ class Recipe < ApplicationRecord
   end
 
   def self.ransackable_associations(auth_object = nil)
-    [ "comments", "favorites", "user" ]
+    [ "favorites", "user" ]
   end
 end
