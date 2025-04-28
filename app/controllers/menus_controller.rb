@@ -8,7 +8,7 @@ class MenusController < ApplicationController
   def new
     @menu = Menu.new
     @search = Recipe.ransack(params[:q])
-    @recipes = @search.result(distinct: true).includes(:user).order(created_at: :desc)
+    @recipes = @search.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def create
