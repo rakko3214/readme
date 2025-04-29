@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @menus = current_user.menus.includes(:user)
+    @menus = Menu.includes(:user)
   end
 
   def new
