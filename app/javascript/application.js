@@ -14,8 +14,20 @@ window.addEventListener('turbo:render', ()=>{
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  // 検索ボックスの状態を復元
+  const searchField = document.querySelector('input[name="q[title_or_ingredient_cont]"]');
+  if (searchField) {
+    searchField.value = localStorage.getItem('search_query') || '';
+  }
+
+  // 検索ボックスの変更を検知して状態を保存
+  if (searchField) {
+    searchField.addEventListener('input', function() {
+      localStorage.setItem('search_query', this.value);
+    });
+  }
+
   // チェックボックスの状態を復元
-  console.log("d");
   const recipeCheckboxes = document.querySelectorAll('input[type=checkbox][name="menu[recipe_ids][]"]');
   recipeCheckboxes.forEach(checkbox => {
     const recipeId = checkbox.value;
