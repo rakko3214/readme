@@ -30,21 +30,3 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
-
-document.addEventListener('turbo:load', () => {
-  const recipeCheckboxes = document.querySelectorAll('input[name="menu[recipe_ids][]"]');
-
-  // セッションからチェックボックスの状態を復元
-  recipeCheckboxes.forEach((checkbox) => {
-      if (sessionStorage.getItem(checkbox.id) === 'true') {
-          checkbox.checked = true;
-      }
-  });
-
-  // チェックボックスの変更を検知して状態をセッションに保存
-  recipeCheckboxes.forEach((checkbox) => {
-      checkbox.addEventListener('change', () => {
-          sessionStorage.setItem(checkbox.id, checkbox.checked);
-      });
-  });
-});
