@@ -33,7 +33,7 @@
                   <div class="p-4">
                     <div class="flex justify-between items-center">
                       <h4 class="text-lg font-bold">
-                        <%= check_box_tag "menu[recipe_ids][]", recipe.id %>
+                        <%= check_box_tag "menu[recipe_ids][]", recipe.id, false, id: "recipe_#{recipe.id}" %>
                         <%= recipe.title %>
                       </h4>
                     </div>  
