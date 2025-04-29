@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // 検索ボックスの状態を復元
   const searchField = document.querySelector('input[name="q[title_or_ingredient_cont]"]');
   if (searchField) {
-    searchField.value = localStorage.getItem('search_query') || '';
+    searchField.value = sessionStorage.getItem('search_query') || '';
   }
 
   // 検索ボックスの変更を検知して状態を保存
   if (searchField) {
     searchField.addEventListener('input', function() {
-      localStorage.setItem('search_query', this.value);
+      sessionStorage.setItem('search_query', this.value);
     });
   }
 
@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const recipeCheckboxes = document.querySelectorAll('input[type=checkbox][name="menu[recipe_ids][]"]');
   recipeCheckboxes.forEach(checkbox => {
     const recipeId = checkbox.value;
-    const isChecked = localStorage.getItem(`recipe_${recipeId}`) === 'true';
+    const isChecked = sessionStorage.getItem(`recipe_${recipeId}`) === 'true';
     checkbox.checked = isChecked;
   });
 
   // チェックボックスの変更を検知して状態を保存
   recipeCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
-      localStorage.setItem(`recipe_${this.value}`, this.checked);
+      sessionStorage.setItem(`recipe_${this.value}`, this.checked);
     });
   });
 });
