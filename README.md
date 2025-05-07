@@ -1,24 +1,65 @@
-# README
+### 画面遷移図
+Figma：https://www.figma.com/design/Cb2YMC4gIiddqnzXlOdAxc/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=y8dJRgt0Lcm6rqqR-0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Figma：https://www.figma.com//0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=ucrj69nXMroh9G3f-0
 
-Things you may want to cover:
+### READMEに記載した機能
+- [レ]トップページ
+- [レ]ユーザー登録
+- [レ]マイページ
+- [レ]ログイン機能
+- [レ]レシピ投稿機能
+- [レ]レシピ編集機能
+- [レ]レシピ削除機能
+- [レ]レシピ一覧
+- [レ]検索機能
+- [レ]マイ献立
+- [レ]献立作成機能
+- [レ]献立、お気に入り
+- [レ]献立削除機能
+- [レ]献立編集機能
+- [レ]全体献立一覧
+- [レ]お問い合わせフォーム
+- [レ]プライベートポリシー
+- [レ]利用規約
 
-* Ruby version
+### 未ログインでも閲覧または利用できるページ
+- [レ]トップページ
+- [レ]ユーザー登録
+- [レ]ログインフォーム
+- [レ]全体献立一覧
+- [レ]献立詳細
+- [レ]レシピ一覧
+- [レ]レシピ詳細
+- [レ]お問い合わせフォーム
+- [レ]プライベートポリシー
+- [レ]利用規約
 
-* System dependencies
+### ER図
+（ER図のスクリーンショットの画像）
 
-* Configuration
+### 本サービスの概要（700文字以内）
+レシピを投稿サービスです
+様々なレシピが投稿されればそのレシピをもとに各々献立を作成することができます。
+レシピがあってもそれにあった献立を作るのが難しい料理初心者の方などが参考にできたり
+自分で献立を作成して、次作るときにまた考えなくて済むようなサービスとなっています。
+### MVPで実装する予定の機能
+- [レ] ユーザー登録機能
+- [レ] ログイン機能
+- [レ]レシピ投稿機能
+- [レ]レシピ編集機能
+- [レ]レシピ削除機能
+- [レ]検索機能
+- [レ]献立作成機能
+- [レ]お気に入り機能
+- [レ]献立削除機能
+- [レ]献立編集機能
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### ER図の注意点
+- [レ] プルリクエストに最新のER図のスクリーンショットを画像が表示される形で掲載できているか？
+- [レ] テーブル名は複数形になっているか？
+- [レ] カラムの型は記載されているか？
+- [レ] 外部キーは適切に設けられているか？
+- [レ] リレーションは適切に描かれているか？多対多の関係は存在しないか？
+- [レ] STIは使用しないER図になっているか？
+- [レ] Postsテーブルにpoast_nameのように"テーブル名+カラム名"を付けていないか？
