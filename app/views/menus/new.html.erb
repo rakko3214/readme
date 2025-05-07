@@ -4,14 +4,16 @@
   </div>
 </div>
 <div class="justify-self-center mt-10 border bg-purple-500 py-5 px-10">
-<div class="" >
-検索でレシピを絞れます
+<div>
+<a>検索でレシピを絞れます</a>
 </div>
+<a>メニュー登録の際はリセットを押してから登録お願いします。</a>
 <div class="flex py-5 text-black">
   <%= search_form_for @search, url: new_menu_path, html: {data: {controller: "search", action: "input->search#submit"} } do |f| %>
     <div class="flex items-center mb-3">
       <%= f.search_field :title_or_ingredient_cont, class: "form-input rounded-md border-gray-300 shadow-sm", placeholder: "レシピ名・材料名" %>
     </div>
+    <%= link_to "リセット", new_menu_path, class: "" %>
   <% end %>  
 </div>
 </div>
@@ -23,6 +25,7 @@
           <%= f.label "献立名" %>
           <%= f.text_field :title, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
         </div>
+        <%= f.submit "登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
         <div class="flex justify-self-center mt-4">
          <% if @recipes.present? %>
           <% @recipes.each do |recipe| %>
@@ -46,8 +49,6 @@
           <div class="mb-3">レシピがありません</div>
          <% end %>
         </div>
-        <%= paginate @recipes %>
-        <%= f.submit "登録", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
       <% end %>
   </div>
 </div>
