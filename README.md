@@ -1,7 +1,5 @@
 ### 画面遷移図
-Figma：https://www.figma.com/design/Cb2YMC4gIiddqnzXlOdAxc/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=y8dJRgt0Lcm6rqqR-0
-
-Figma：https://www.figma.com//0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=ucrj69nXMroh9G3f-0
+Figma：https://www.figma.com/design/Cb2YMC4gIiddqnzXlOdAxc/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f
 
 ### READMEに記載した機能
 - [レ]トップページ
@@ -36,12 +34,12 @@ Figma：https://www.figma.com//0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id
 - [レ]利用規約
 
 ### ER図
-（ER図のスクリーンショットの画像）
+![（ER図のスクリーンショットの画像）](https://i.gyazo.com/a137e075ec672349ba78914f85062611.png)
 
 ### 本サービスの概要（700文字以内）
 レシピを投稿サービスです
 様々なレシピが投稿されればそのレシピをもとに各々献立を作成することができます。
-レシピがあってもそれにあった献立を作るのが難しい料理初心者の方などが参考にできたり
+毎度献立を作るといった手間を省くために
 自分で献立を作成して、次作るときにまた考えなくて済むようなサービスとなっています。
 ### MVPで実装する予定の機能
 - [レ] ユーザー登録機能
@@ -54,12 +52,3 @@ Figma：https://www.figma.com//0BsnctXXQ8NJtukoXAHzM5/%E7%84%A1%E9%A1%8C?node-id
 - [レ]お気に入り機能
 - [レ]献立削除機能
 - [レ]献立編集機能
-
-### ER図の注意点
-- [レ] プルリクエストに最新のER図のスクリーンショットを画像が表示される形で掲載できているか？
-- [レ] テーブル名は複数形になっているか？
-- [レ] カラムの型は記載されているか？
-- [レ] 外部キーは適切に設けられているか？
-- [レ] リレーションは適切に描かれているか？多対多の関係は存在しないか？
-- [レ] STIは使用しないER図になっているか？
-- [レ] Postsテーブルにpoast_nameのように"テーブル名+カラム名"を付けていないか？
