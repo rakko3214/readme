@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 gem "devise"
 
-gem "carrierwave", "~> 3.0"
+gem "carrierwave", "~> 3.1"
 
 gem "pry-rails"
 
